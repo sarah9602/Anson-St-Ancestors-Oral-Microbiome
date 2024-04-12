@@ -1,0 +1,131 @@
+ID	ToothNumberPathologies	ArcadeNumberPathologies	ArcadeOralHealthNumberPathologies	Abscess	CariesTooth	CariesAll	BirthPlace	TimePeriodLocation	Population	TimePeriod	Location	Order	GC_Content
+CHS01	0	1	0	NotPresent	NotPresent	NotPresent	Non-NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	57
+CHS03	0	2	1	NotPresent	NotPresent	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	47
+CHS14	1	7	5	Present	Present	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	42
+CHS22	1	7	5	Present	NotPresent	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	56
+CHS26	1	1	1	NotPresent	Present	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	39
+CHS27	0	1	1	NotPresent	NotPresent	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	38
+CHS29	0	8	4	Present	NotPresent	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	34
+CHS31	1	4	2	Present	Present	Present	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	59
+CHS36	0	0	0	NotPresent	NotPresent	NotPresent	NorthAmerica	HistoricNorthAmerica_AnsonStreetAncestors	AnsonStreet_SouthCarolina	Historic	AnsonStreet_SouthCarolina	2	34
+WAMP34								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP33								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP29								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP27								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP26								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP25								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP24								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP23								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP22								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP21								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP20								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP19								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP18								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP15								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP14								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP13								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP12								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP11								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP10								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP09								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP07								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP06								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP05								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP04								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP03								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+WAMP02								AncientNorthAmerica	Wichita_Oklahoma	Ancient	NorthAmerica	1	
+TAF018B								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	53
+TAF018A								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	63
+TAF017E								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	62
+TAF017C								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	51
+TAF017A								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	56
+TAF016B								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	63
+TAF008B								AncientAfrica	Taforalt_Morocco	Ancient	Africa	1	59
+PYK005A								HistoricAfrica	Polyoak_SouthAfrica	Historic	Africa	2	53
+PYK004A								HistoricAfrica	Polyoak_SouthAfrica	Historic	Africa	2	59
+PYK003A								HistoricAfrica	Polyoak_SouthAfrica	Historic	Africa	2	55
+PYK002A								HistoricAfrica	Polyoak_SouthAfrica	Historic	Africa	2	56
+PYK001A								HistoricAfrica	Polyoak_SouthAfrica	Historic	Africa	2	60
+OAK005A								AncientAfrica	Oakhurst_SouthAfrica	Ancient	Africa	1	58
+OAK004A								AncientAfrica	Oakhurst_SouthAfrica	Ancient	Africa	1	54
+OAK003A								AncientAfrica	Oakhurst_SouthAfrica	Ancient	Africa	1	53
+OAK002A								AncientAfrica	Oakhurst_SouthAfrica	Ancient	Africa	1	56
+OAK001A								AncientAfrica	Oakhurst_SouthAfrica	Ancient	Africa	1	56
+ESA008A								HistoricAfrica	Essaouira_Morocco	Historic	Africa	2	54
+ESA007A								HistoricAfrica	Essaouira_Morocco	Historic	Africa	2	56
+ESA006A								HistoricAfrica	Essaouira_Morocco	Historic	Africa	2	59
+ESA004A								HistoricAfrica	Essaouira_Morocco	Historic	Africa	2	57
+ESA003A								HistoricAfrica	Essaouira_Morocco	Historic	Africa	2	56
+ERR3579826								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579825								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579824								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579823								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579822								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579821								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579820								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3579819								ModernEurope	Jaen_Spain	Modern	Europe	3	
+ERR3307054								ModernEurope	Valencia_Spain	Modern	Europe	3	58
+ERR3307053								ModernEurope	Valencia_Spain	Modern	Europe	3	58
+ERR3307052								ModernEurope	Valencia_Spain	Modern	Europe	3	57
+ERR3307051								ModernEurope	Valencia_Spain	Modern	Europe	3	52
+ERR3307050								ModernEurope	Valencia_Spain	Modern	Europe	3	53
+ERR3307049								ModernEurope	Valencia_Spain	Modern	Europe	3	55
+ERR3307048								ModernEurope	Valencia_Spain	Modern	Europe	3	57
+ERR3307047								ModernEurope	Valencia_Spain	Modern	Europe	3	56
+ERR3307046								ModernEurope	Valencia_Spain	Modern	Europe	3	48
+ERR3307045								ModernEurope	Valencia_Spain	Modern	Europe	3	52
+CS48								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	48
+CS47								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	48
+CS46								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	46
+CS45								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	49
+CS44								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	49
+CS43								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	43
+CS42								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	43
+CS40								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	49
+CS39								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	40
+CS38								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	46
+CS37								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	38
+CS36								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	47
+CS35								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	47
+CS34								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	50
+CS33								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	48
+CS32								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	42
+CS31								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	40
+CS30								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	53
+CS29								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	41
+CS28								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	44
+CS27								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	50
+CS26								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	49
+CS24								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	45
+CS23								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	46
+CS22								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	46
+CS21								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	50
+CS20								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	42
+CS19								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	47
+CS18								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	41
+CS17								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	49
+CS16								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	49
+CS15								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	50
+CS14								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	47
+CS13								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	47
+CS12								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	42
+CS11								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	48
+CS10								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	47
+CS09								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	46
+CS08								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	51
+CS04								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	52
+CS03								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	40
+CS02								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	43
+CS01								HistoricEurope	RadcliffeInfirmary	Historic	Europe	2	48
+Abusir1594								AncientAfrica	AbusirElMeleq_Egypt	Ancient	Africa	1	43
+Abusir1574								AncientAfrica	AbusirElMeleq_Egypt	Ancient	Africa	1	45
+Abusir1519								AncientAfrica	AbusirElMeleq_Egypt	Ancient	Africa	1	46
+Abusir1511								AncientAfrica	AbusirElMeleq_Egypt	Ancient	Africa	1	58
+Abusir1504								AncientAfrica	AbusirElMeleq_Egypt	Ancient	Africa	1	43
+Edo10								HistoricAsia	Edo_Japan	Historic	Asia	2	50
+Edo9								HistoricAsia	Edo_Japan	Historic	Asia	2	48
+Edo8								HistoricAsia	Edo_Japan	Historic	Asia	2	43
+Edo4								HistoricAsia	Edo_Japan	Historic	Asia	2	44
+Edo3								HistoricAsia	Edo_Japan	Historic	Asia	2	55
+Edo2								HistoricAsia	Edo_Japan	Historic	Asia	2	48
+Edo1								HistoricAsia	Edo_Japan	Historic	Asia	2	47
