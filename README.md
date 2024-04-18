@@ -18,6 +18,10 @@ Analyses were run on a combination of personal compuber (Mac), workstation (Linu
      * [Classify functional potential](#classify-functional-potential)   
      * [Analyze functional profiles](#analyze-functional-profiles) 
    * [Eukaryotic Classification with Kraken2](#eukaryotic-classification-with-kraken2)
+     * [Build custom database](#build-custom-database)
+     * [Run Kraken and Bracken](#run-kraken-and-bracken)
+     * [Analyze bracken for Eukaryotic signatures](#analyze-bracken-for-eukaryotic-signatures)
+
 <!--te-->
 
 ## Pre-processing of raw sequencing data
@@ -288,9 +292,6 @@ done
 ```
 
 Align sample reads to new genome files using [kraken_euk_mapping.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/kraken_euk_mapping.sh).
-
-
-
 
 
 
