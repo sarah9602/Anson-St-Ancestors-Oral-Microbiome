@@ -7,9 +7,9 @@ Analyses were run on a combination of personal compuber (Mac), workstation (Linu
 <!--ts-->
    * [Pre-processing of raw sequencing data](#pre-processing-of-raw-sequencing-data)
    * [Taxonomic classification](#taxonomic-classification)
-   	  * [Download MetaPlAn4 CHOCOPhlAn database](#download-metaphlan-database)
-      * [Classify trimmed and merged sequences](#classify-trimmed-merged-sequences)
-      * [Perform PERMANOVA and Biplot analysis](#permanova-and-biplot-analysis)
+   	  * [Download MetaPlAn4 CHOCOPhlAn database](#download-metaphlan4-chocophlan-database)
+      * [Classify trimmed and merged sequences](#classify-trimmed-and-merged-sequences)
+      * [Perform PERMANOVA and Biplot analysis](#perform-permanova-and-biplot-analysis)
    * [Analysis of metagenomic data in R](#analysis-of-metagenomic-data-in-r)
      * [Preparation of Phyloseq datasets](#preparation-of-phyloseq-datasets)
      * [Non-metric Multidimensional Scaling](#non-metric-multidimensional-scaling)
