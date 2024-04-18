@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: sarahjane
+@author: sarah9602 (2024)
 Usage
     get_my_accession2taxid.py list_of_accession_numbers existing_mapping_file
 

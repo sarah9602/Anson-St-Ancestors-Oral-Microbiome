@@ -2,6 +2,7 @@
 ## This pipeline will align samples to genomes used to feed the kraken database
 ## Requires mapDamage to be in path
 ## Performed with BWA v0.7.15-r1140
+## Script written by Sarah Johnson (2024) inspired by Tanvi Honap.
 
 ## Set variables
 reportdir=/PATH/TO/OUTPUT/REPORTS

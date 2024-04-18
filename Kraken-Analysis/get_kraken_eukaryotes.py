@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 16 15:35:05 2024
-
 Get top eukaryotic signatures from merged krkaen2mpa file
 Usage:
     get_kraken_eukaryotes.py INFILE
 
-@author: sarahjane
+@author: sarah9602 (2024)
 """
 import sys,os
 import pandas as pd

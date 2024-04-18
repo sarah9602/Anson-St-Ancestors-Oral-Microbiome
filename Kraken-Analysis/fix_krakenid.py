@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Mar  2 08:28:27 2024
-
 ## Replace seqids given new taxdump
 Usage:
     fix_krakenid.py INFILE /PATH/TO/NEW/TAXDUMP/taxid.map
 
-@author: sarahjane
+@author: sarah9602 (2024)
 """
 
 import sys

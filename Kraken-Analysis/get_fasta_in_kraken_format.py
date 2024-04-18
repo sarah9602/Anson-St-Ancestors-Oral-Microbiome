@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: sarahjane
+@author: sarah9602
 USAGE
     get_fasta_in_kraken_format.py /PATH/TO/INPUT.fa TAXID
 """
 
-##Usage
-## Go to directory of input/output
-##      python3 update_kraken_continue.py
-
-
-# you'll see this alias in documentation, examples, etc.
 import os,sys
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord

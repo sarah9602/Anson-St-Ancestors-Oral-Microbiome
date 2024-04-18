@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## Create custom kraken2 database
+## Script written by Sarah Johnson (2024)
 ## Database includes GTDB bacteria and archaea, NCBI fungi, protozoa, viruses, mitochondria, and plastids
 ## Requirements:
 ##		taxonkit (https://bioinf.shenwei.me/taxonkit/)

@@ -5,7 +5,7 @@ Make sure gtdb.taxid.map is in /PATH/TO/GTDB/DIRECTORIES
 USAGE:
     python get_gtdb_in_kraken_format.py /PATH/TO/GTDB/DIRECTORIES
 
-@author: sarahjane
+@author: sarah9602 (2024)
 """
 
 # you'll see this alias in documentation, examples, etc.

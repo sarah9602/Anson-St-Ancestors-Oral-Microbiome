@@ -1,13 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Feb 22 11:07:46 2024
-
 USAGE:
     python get_organelle_in_kraken_format.py /PATH/TO/ORGANELLE/FNA/FILES
     organelle.taxid.map file must be present in this directory
 
-@author: sarahjane
+@author: sarah9602 (2024)
 """
 import sys,subprocess,os,glob
 from Bio import SeqIO

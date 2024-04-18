@@ -1,3 +1,5 @@
+## Script created by Sarah Johnson (2024) to visualize comparative output from HUMANn3
+
 library(tidyverse)
 library(ggplot2)
 library(reshape2)
