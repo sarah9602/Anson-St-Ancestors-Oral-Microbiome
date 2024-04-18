@@ -107,6 +107,9 @@ Accompanying scripts:
 [merge_metaphlan_sourcetracker_counts.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/merge_metaphlan_sourcetracker_counts.py)
 [sourcetracker_feature_contributions.py ](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/sourcetracker_feature_contributions.py) (Optional)
 
+Visualize SourceTracker2 output as pie plots:
+[Rscript_PiePlots_SourceTracker2.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/Rscript_PiePlots_SourceTracker2.R)
+
 ### Align trimmed and merged reads to human reference genome
 Reads were aligned to the human genome (hg19) to assess endogenous human DNA content and filter human DNA from the Ancestors' metagenomes. Resulting filtered.fastq.gz files were used as input for other downstream analyses.
 Reference for current project was [hg19](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.13/).

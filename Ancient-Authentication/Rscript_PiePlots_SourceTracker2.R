@@ -1,4 +1,6 @@
 ### Barplots for sourcetracker2
+## Script created by Sarah Johnson based on those by Tanvi Honap.
+
 setwd("/PATH/TO/Metaphlan/sourcetracker2.20000.s")
 
 tab=read.csv(file="mixing_proportions.txt",sep="\t",header=TRUE)
