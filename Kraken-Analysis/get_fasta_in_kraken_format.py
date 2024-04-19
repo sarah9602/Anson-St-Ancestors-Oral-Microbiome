@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 @author: sarah9602
+
+Will get a single genome file in kraken format given a single taxid.
+
 USAGE
     get_fasta_in_kraken_format.py /PATH/TO/INPUT.fa TAXID
 """

@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 15 15:32:57 2024
+@author: sarah9602
 
-Inspect sourcetracker feature tables
-Output will be put in input directory
-
-@author: sarahjane
+Inspect sourcetracker feature tables.
+Output table with OTU IDs mapped to taxa that have a count of at least 5 will be put in input directory.
 """
 import os,sys,glob,argparse
 import pandas as pd

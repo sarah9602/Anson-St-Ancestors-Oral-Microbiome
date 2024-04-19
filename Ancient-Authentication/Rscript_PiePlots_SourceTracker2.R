@@ -1,11 +1,17 @@
 ### Barplots for sourcetracker2
 ## Script created by Sarah Johnson based on those by Tanvi Honap.
+## Loads the output mixing_proportions.txt file from sourcetracker2 (v2.0.1-dev) and visualizes environment proportions for each sample in a pie chart.
+
+## Load libraries
+library(reshape2)
+library(ggplot2)
+library(RColorBrewer)
+
 
 setwd("/PATH/TO/Metaphlan/sourcetracker2.20000.s")
 
 tab=read.csv(file="mixing_proportions.txt",sep="\t",header=TRUE)
 
-library(reshape2)
 tab1=setNames(data.frame(t(tab[,-1])),tab[,1])
 tab1<-tab1[order(tab1$ModernDentalCalculus),]
 tab2= tab1 %>% rownames_to_column(var="SampleID") 
@@ -14,10 +20,6 @@ ord <- c("ModernDentalCalculus","ModernSubgingivalPlaque", "ModernSupragingivalP
 tab2$variable<-factor(tab2$variable,levels=ord)
 tab2$SampleID=as.character(tab2$SampleID)
 tab2$SampleID=factor(tab2$SampleID,levels=unique(tab2$SampleID))
-
-library(ggplot2)
-library(RColorBrewer)
-
 
 cbPalette <- c("#A4D3A6", "#518244","#4E687C","#223FEC","#C15FDC","#5F3634","#70A3E9","#656565")
 pie_charts <- ggplot(tab2, aes(x = "", y = value, fill = variable)) +

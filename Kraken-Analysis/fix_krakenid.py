@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-## Replace seqids given new taxdump
+Replace sequence headers in kraken-formatted genome files reflecting new TAXIDs created using "taxonkit create-taxdump".
 Usage:
     fix_krakenid.py INFILE /PATH/TO/NEW/TAXDUMP/taxid.map
 

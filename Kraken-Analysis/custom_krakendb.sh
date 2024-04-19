@@ -7,7 +7,7 @@
 ##		taxonkit (https://bioinf.shenwei.me/taxonkit/)
 ## 		brename (https://github.com/shenwei356/brename)
 ##		rush (https://github.com/shenwei356/rush)
-##		biopython (https://biopython.org/wiki/Download)
+##		Biopython (https://biopython.org/wiki/Download)
 ## Some scripts inspired by gtdb-taxdump (https://github.com/shenwei356/gtdb-taxdump)
 ## Some scripts adopted from KMCP tutorial (https://bioinf.shenwei.me/kmcp/database/#building-databases)
 
@@ -50,7 +50,7 @@ cat accession.spec.taxid.map \
 ### Format GTDB for kraken2
 cp gtdb.taxid.map $K2DB/gtdb_genomes_reps_r214/database
 ## conda activate mpa
-python ~/get_gtdb_in_kraken_format.py $K2DB/gtdb_genomes_reps_r214/database
+python get_gtdb_in_kraken_format.py $K2DB/gtdb_genomes_reps_r214/database
 
 #######################################
 ### FORMAT NCBI
@@ -82,9 +82,9 @@ done
 ###                         List of desired assembly completion levels (Optional). Options include: Complete Genome (default), Chromosome, Scaffold, Contig
 ###   -r REFSEQ_CATEGORY, --refseq_category REFSEQ_CATEGORY
 ###                         Level of assembly completion (Optional). Options include: representative genome, reference genome Take care when choosing.
-python ~/update_kraken_continue.py -p $K2DB/genomes -c fungi -a "Complete Genome" -r "representative genome" 
-python ~/update_kraken_continue.py -p $K2DB/genomes -c viral -a "Complete Genome" -r "representative genome" 
-python ~/update_kraken_continue.py -p $K2DB/genomes -c protozoa -a "Complete Genome" -r "representative genome" 
+python update_kraken_continue.py -p $K2DB/genomes -c fungi -a "Complete Genome" -r "representative genome" 
+python update_kraken_continue.py -p $K2DB/genomes -c viral -a "Complete Genome" -r "representative genome" 
+python update_kraken_continue.py -p $K2DB/genomes -c protozoa -a "Complete Genome" -r "representative genome" 
 mv genomes/*genomes.fa .
 
 wget https://ftp.ncbi.nlm.nih.gov/genomes/refseq/plastid/plastid.1.1.genomic.fna.gz
@@ -117,7 +117,7 @@ grep "_" nucl_gb.accession2taxid > condensed.accession2taxid
 get_my_accession2taxid.py accnums.txt condensed.accession2taxid
 
 ## Format organelle genomes for kraken format
-python ~/get_organelle_in_kraken_format.py $K2DB/genomes
+python get_organelle_in_kraken_format.py $K2DB/genomes
 
 #############################
 ## Create custom taxdump
@@ -156,7 +156,7 @@ taxonkit list --data-dir $TAXDUMP/ --ids 2759 --indent "" \
 ## Fix genome headers to match new taxdump
 ## Do not need to fix gtdb genomes
 cd genomes
-ls *genomes.fa|grep -v "gtdb"|while read infile; do ~/fix_krakenid.py $infile /PATH/TO/taxdump-gtdb+ncbi-eukaryote/taxid.map; done
+ls *genomes.fa|grep -v "gtdb"|while read infile; do fix_krakenid.py $infile /PATH/TO/taxdump-gtdb+ncbi-eukaryote/taxid.map; done
 
 ## Download human genome T2T-CHM13v2.0 name it human_genome.fa
 ## Format it for kraken and replace taxid to match new taxdump

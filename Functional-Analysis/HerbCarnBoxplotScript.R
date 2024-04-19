@@ -1,4 +1,13 @@
 ## Script created by Sarah Johnson (2024) to visualize comparative output from HUMANn3
+## Will load table filtered for meat consumption enzymes, as well as a metadata file and a feature map. will filter the table to include enzymes present at > 2 cpm in at least 75% of samples. The data will then be plotted in bar charts colored by population. Kruskal-Wallis tests were done to assess significance within either plant-rich or meat-rich diets and Pairwise Wilcox statistics were performed to assess significance between populations in either category.
+## Output includes:
+# CHS-Vel-WAMP-MeatConsumption.KW.txt
+# meat.CHS-Vel-WAMP.Pairwise.txt
+# meat.CHS-Vel-WAMP.summary.txt
+# plant.CHS-Vel-WAMP.Pairwise.txt
+# plant.CHS-Vel-WAMP.summary.txt
+
+## Boxplot exported from RStudio
 
 library(tidyverse)
 library(ggplot2)

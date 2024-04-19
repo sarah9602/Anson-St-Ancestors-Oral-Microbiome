@@ -67,6 +67,8 @@ done
 
 ### Download MetaPlAn4 CHOCOPhlAn database
 Downloaded a marker gene database that includes species level genome bins (SGBs) to increase classification of poorly characterized genomes. 
+Requires:
+* [MetaPhlAn4](https://github.com/biobakery/MetaPhlAn)
 
 ```bash
 MPAdb=/path/to/metaphlan_databases
@@ -213,7 +215,7 @@ Requires:
 * [taxonkit](https://bioinf.shenwei.me/taxonkit/)
 * [brename](https://github.com/shenwei356/brename)
 * [rush](https://github.com/shenwei356/rush)
-* [biopython](https://biopython.org/wiki/Download)
+* [Biopython](https://biopython.org/wiki/Download)
 
 Accompanying scripts:
 * [get_gtdb_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_gtdb_in_kraken_format.py)

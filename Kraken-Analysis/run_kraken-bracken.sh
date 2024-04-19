@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## Run kraken and bracken on samples
+## Requires ~ 450 GB memory and 8+ hours for 12 samples.
 K2DB=/path/to/k2db_GTDB
 samplefile=/path/to/file/with/sample/ids
 FILTdir=/path/to/FilteredAnalysisReady_reads
@@ -12,7 +13,6 @@ mkdir -p $reportdir/bracken-S
 
 ## Database with GTDB bacteria and archaea, NCBI viruses, fungi, protozoa, plastids, and chloroplasts
 ## Built with default parameters
-## Requires ~ 450 GB memory
 cat $samplefile|while read sample;
 do
 	## Run Kraken2

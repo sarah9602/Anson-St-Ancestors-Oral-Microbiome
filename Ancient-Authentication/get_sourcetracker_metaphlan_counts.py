@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Feb 29 13:41:36 2024
+@author: sarah9602 (2024)
 
 Get merged metaphlan relative abundance SourceTracker table into count data.
 provide as input merged.ST.txt and mapping file of sample names to read count
 Output will be input file name with 'counts' added before file suffix.
 Output will also have taxid lineage column removed.
 
-Requires pandas installed (required)
+Requires pandas installed
 
 How to read count mapping file:
 ls STDIR/*mpa|while read in; do \
@@ -19,7 +19,6 @@ ls STDIR/*mpa|while read in; do \
 USAGE
     get_sourcetracker_metaphlan_counts.py /PATH/TO/MERGED_ST.TXT /PATH/TO/MAPPING/FILE
 
-@author: sarahjane
 """
 import pandas as pd
 import sys,os

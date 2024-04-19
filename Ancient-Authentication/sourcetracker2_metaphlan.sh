@@ -3,14 +3,14 @@
 ############
 
 ## Script for running SourceTracker2 from metaphlan output
-# Ensure sources and samples (sinks) classified with the same database and metaphlan version using same parameters
-# Blanks can be used as sources if species are identified
-# Rarefying to 10K is arbitrary, but the higher you go, the longer it takes.
+# Ensure sources and samples (sinks) classified with the same database and metaphlan version using same parameters.
+# Blanks can be used as sources if species are identified.
+# Rarefying to 20K is arbitrary, but the higher you go, the longer it takes.
 # Resulting mixing_proportions.txt file can be used as input for R to visualize plots.
-# Metaphlan mapping file noted as otu-map-TAXONLEVEL.txt have been arbitrarily created. 
+# Metaphlan mapping file noted as otu-map-TAXONLEVEL.txt are arbitrarily created below. 
 # Use map file specific for taxon level.
 
-## Last edited 4/2/2024 by SJ
+## Created by Sarah Johnson (2024)
 
 ## Need sourcetracker2 environment
 conda create -n st2 -c conda-forge python=3.8 numpy scipy scikit-bio h5py hdf5 seaborn biom-format
@@ -64,9 +64,7 @@ ls $SoTr/Metaphlan/*mpa|while read in; do \
 
 ## Output is merged metaphlan table with counts calculated using total reads and relative abundances
 # Taxid column omitted
-## Usage
-#       python ~/scripts/get_sourcetracker_metaphlan_counts.py /PATH/TO/MERGED_ST.TXT /PATH/TO/MAPPING/FILE
-python ~/scripts/get_sourcetracker_metaphlan_counts.py $SoTr/Metaphlan/merged.ST.txt $SoTr/Metaphlan/ST.counts.txt
+python scripts/get_sourcetracker_metaphlan_counts.py $SoTr/Metaphlan/merged.ST.txt $SoTr/Metaphlan/ST.counts.txt
 ## Output is $SoTr/Metaphlan/merged.ST.counts.txt and will be combined to merged sample output.
 
 ###############################################
@@ -81,25 +79,7 @@ ls *mpa|while read in; do samp=`echo $in|awk -F"." '{print $1}'`; \
 	ct=`grep "reads processed" $in|sed 's/#//'|awk '{print $1}'|bc`; \
     echo -e "$samp\t$ct"; done > $study.counts.txt
 
-
-## Merge merged metaphlan table with count sourcetracker data
-# usage: merge_metaphlan_sourcetracker_counts.py [-h] [-s merged.SAMPLE.rel.txt]
-#                                                [-st merged.ST.rel.counts.txt]
-#                                                [-m SAMPLE.counts.txt]
-
-# 	Please make sure to supply file paths to the files to combine.
-# Joins metaphlan count data for samples with count data sourcetracker.
-#   -h, --help            show this help message and exit
-#   -s merged.SAMPLE.txt
-#                         Sample Merged metaphlan relative abundance.
-#   -st merged.ST.counts.txt
-#                         Merged SourceTracker counts file. Can be created using
-#                         get_sourcetracker_metaphlan_counts.py script.
-#   -m SAMPLE.counts.txt  Map of sample name to read count. Can be acquired with
-#                         metaphlan output.
-
-python ~/scripts/merge_metaphlan_sourcetracker_counts.py -s merged.$study.txt -st $SoTr/Metaphlan/merged.ST.counts.txt -m $study.counts.txt
-
+python scripts/merge_metaphlan_sourcetracker_counts.py -s merged.$study.txt -st $SoTr/Metaphlan/merged.ST.counts.txt -m $study.counts.txt
 
 ## Summarize MetaPhlAn output to desired taxonomic level
 head -1 ST-merged.$study.counts.txt > ST-merged.$study.counts.$taxonlevel.biom.txt; cat ST-merged.$study.counts.txt|grep "$taxonlevel\__"|grep -v "$nottax\__" >> ST-merged.$study.counts.$taxonlevel.biom.txt
@@ -134,9 +114,6 @@ sourcetracker2 gibbs -i ST-merged.$study.$taxonlevel.OTU.biom -m ST-$study.Mappi
 # biom convert -i ST-merged.$study.$taxonlevel.OTU.biom -o ST-merged.$study.$taxonlevel.OTU.biom.txt --to-tsv --header-key taxonomy --output-metadata-id "#OTUID"
 
 ##################################
-## Move mixing proportions file to working directory once complete
-# To be used as input for vizualization
-cp sourcetracker2.$taxonlevel/mixing_proportions.txt ./$study.$rare.$taxonlevel.mixing_proportions.txt
 
-## Inspect top contributing taxa
+## Inspect top contributing taxa (optional)
 sourcetracker_feature_contributions.py -s /PATH/TO/sourcetracker2.$rare.$taxonlevel -st $SoTr/Metaphlan -t $taxonlevel

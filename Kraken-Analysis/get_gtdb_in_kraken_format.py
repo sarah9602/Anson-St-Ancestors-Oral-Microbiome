@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+@author: sarah9602 (2024)
+
+Get GTDB genome files in kraken format. Will loop through directory containting GCA and GCF files either gzipped or unzipped.
+
 Make sure gtdb.taxid.map is in /PATH/TO/GTDB/DIRECTORIES
 USAGE:
     python get_gtdb_in_kraken_format.py /PATH/TO/GTDB/DIRECTORIES
 
-@author: sarah9602 (2024)
 """
 
 # you'll see this alias in documentation, examples, etc.

@@ -2,8 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 @author: sarah9602 (2024)
-info and error functions adopted frnm Aitor Blanco (aitor.blancomiguez@unitn.it)
-Influenced by sejalmodha
+
+This script downloads genomes from NCBI. User will specify what level of genome will be downloaded (i.e. complete genomes, representative genomes, contigs, scaffolds, etc.). User will also indicate which taxonomic category will be downloaded (i.e. bacteria, archaea, fungi, protozoa, viral, etc.)
+Output files will be fasta with headers appropriate for Kraken database build.
+i.e.
+    >NC_017844.1|kraken:taxid|242507 NC_017844.1 Pyricularia oryzae 70-15 chromosome 1, whole genome shotgun sequence
+
+info and error functions adopted frnm Aitor Blanco (aitor.blancomiguez@unitn.it).
+Workflow and other functions influenced by by sejalmodha (https://github.com/sejmodha).
 
 Run
     python3 update_kraken_continue.py -h 

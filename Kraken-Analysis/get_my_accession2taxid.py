@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 @author: sarah9602 (2024)
+
+Create a mapping file with NCBI accession, accession version, taxids, and GI number. Extracted from larger nucl_wgs.accession2taxid.gz acquired from NCBI. 
+
 Usage
     get_my_accession2taxid.py list_of_accession_numbers existing_mapping_file
 

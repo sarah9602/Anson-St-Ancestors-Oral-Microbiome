@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+@author: sarah9602
+
+Merges merged metaphlan ouput that has been calculuated to absolute abundance for SourceTracker sources with the merged relative abundance metaphlan ouput from samples. Uses Sample read count file to determine absoulte abundances. 
+
 How to read count mapping file:
 ls STDIR/*mpa|while read in; do \
     samp=`echo $in|awk -F"/" '{print $NF}'|awk -F"." '{print $1}'`; \
     ct=`grep "reads processed" $in|sed 's/#//'|awk '{print $1}'|bc`; \
     echo -e "$samp\t$ct"; done > ST.counts.txt
 
-@author: sarahjane
 """
 import argparse
 import os

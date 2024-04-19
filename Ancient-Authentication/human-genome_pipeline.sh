@@ -1,5 +1,6 @@
 #!/bin/bash
 ## Pipeline to align analysis-ready reads to human genome.
+## Script created by Sarah Johnson (2024) inspired by those from Tanvi Honap
 
 ## Install mapDamage2 (https://ginolhac.github.io/mapDamage/)
 
