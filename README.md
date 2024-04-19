@@ -1,6 +1,6 @@
 # Anson-St-Ancestors-Oral-Microbiome
 General workflow of bioinformatics analysis for Ansont St. Ancestor Oral Microbiome project.
-Analyses were run on a combination of personal compuber (Mac), workstation (Linux), and the HPC cluster at the University of Oklahoma, OSCER.
+Analyses were run on a combination of personal compuber (Mac), workstation (Linux), and the HPC cluster, OSCER, at the University of Oklahoma.
 
 # Table of contents
 
@@ -25,7 +25,7 @@ Analyses were run on a combination of personal compuber (Mac), workstation (Linu
 <!--te-->
 
 ## Pre-processing of raw sequencing data
-Sequencing data from the Ancestors and two negative controls were processed with AdapterRemoval to merge paired-end reads, trim Ns and poor quality reads, and eliminate fragments shorter than 30 nt, and remove adapters:
+Sequencing data from the Ancestors and two negative controls were processed with AdapterRemoval to merge paired-end reads, trim Ns and poor quality reads, eliminate fragments shorter than 30 nt, and remove adapters.
 
 ```bash
 ## Identify Adapters
@@ -57,7 +57,7 @@ do
 	AdapterRemoval --threads 2 --file1 $path/$sample.R1.fastq.gz --file2 $path/$sample.R2.fastq.gz \
 	--trimns --trimqualities --minalignmentlength 10 --collapse --minquality 30 --minlength 30 \
 	--outputcollapsed $sample.collapsed.fastq.gz --outputcollapsedtruncated $sample.collapsed.truncated.fastq.gz \
-	--basename $sample --gzip --settings $sample.AdapterRemoval.txt
+	--basename $sample --gzip --adapter-list adapters.txt --settings $sample.AdapterRemoval.txt
 	## Combine collapsed and collapsed truncated into Analysis Ready (AR) files
 	cat $sample.collapsed* > $sample.AR.fastq.gz
 done
@@ -88,36 +88,37 @@ done
 
 ### Perform PERMANOVA and Biplot analysis
 Performed multivariate statistical tests for metagenomes from the Ancestors:
-[PCA_PERMANOVA_BIPLOT.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/tree/main/Taxonomic-Classification-and-Analysis/PCA_PERMANOVA_BIPLOT.R)
+* [PCA_PERMANOVA_BIPLOT.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/tree/main/Taxonomic-Classification-and-Analysis/PCA_PERMANOVA_BIPLOT.R)
 
 Performed multivariate statistical tests for metagenomes from the Ancestors and comparative populations (modern Spain, historic Asia, historic Africa, historic United Kingdom, ancient Africa, and pre-contact North America)
-[PCA_PERMANOVA_BIPLOT_Comparative.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/tree/main/Taxonomic-Classification-and-Analysis/PCA_PERMANOVA_BIPLOT_Comparative.R)
+* [PCA_PERMANOVA_BIPLOT_Comparative.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/tree/main/Taxonomic-Classification-and-Analysis/PCA_PERMANOVA_BIPLOT_Comparative.R)
 
 ## Ancient Authentication
 
 ### Perform SourceTracker2
-Obtain reference shotgun metagenomes from known source environments. Ensure number of metagenomes is about the same accross all sources. Sources for this analysis - Velsko et al. 2019; HMP (Gebers et al. 2012); Sankaranarayanan et al. 2015; Rampelli et al. 2015; Obregon-Tito et al. 2015; Oh et al. 2016; Johnston et al. 2016. Create a mapping file for sources and samples (sinks) with at least 3 columns titled #SampleID, SourceSink, Env. Source samples are labeled "source" and study samples labeled "sink". Env indicates source environment, i.e. skin, ModernDentalCalculus, etc. Process source metagenomes and classify using MetaPhlAn4 with same parameters and input samples. 
+Obtain reference shotgun metagenomes from known source environments. Ensure number of metagenomes is about the same accross all sources. Sources for this analysis - Velsko et al. 2019; HMP (Gebers et al. 2012); Sankaranarayanan et al. 2015; Rampelli et al. 2015; Obregon-Tito et al. 2015; Oh et al. 2016; Johnston et al. 2016. Create a mapping file for sources and samples (sinks) with at least 3 columns titled #SampleID, SourceSink, Env. Source samples are labeled "source" and study samples labeled "sink". Env indicates source environment, i.e. skin, ModernDentalCalculus, etc. Process source metagenomes and classify using MetaPhlAn4 with same parameters as samples. 
 
 Update path, study, and sourcetracker directory information in the sourcetracker2 wrapper script and run.
-[sourcetracker2_metaphlan.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/sourcetracker2_metaphlan.sh)
+* [sourcetracker2_metaphlan.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/sourcetracker2_metaphlan.sh)
 
 Accompanying scripts:
-[merge_metaphlan_tables.py](https://github.com/biobakery/MetaPhlAn/blob/master/metaphlan/utils/merge_metaphlan_tables.py) (from biobakery)
-[get_sourcetracker_metaphlan_counts.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/get_sourcetracker_metaphlan_counts.py)
-[merge_metaphlan_sourcetracker_counts.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/merge_metaphlan_sourcetracker_counts.py)
-[sourcetracker_feature_contributions.py ](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/sourcetracker_feature_contributions.py) (Optional)
+* [merge_metaphlan_tables.py](https://github.com/biobakery/MetaPhlAn/blob/master/metaphlan/utils/merge_metaphlan_tables.py) (from biobakery)
+* [get_sourcetracker_metaphlan_counts.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/get_sourcetracker_metaphlan_counts.py)
+* [merge_metaphlan_sourcetracker_counts.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/merge_metaphlan_sourcetracker_counts.py)
+* [sourcetracker_feature_contributions.py ](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/sourcetracker_feature_contributions.py) (Optional)
 
 Visualize SourceTracker2 output as pie plots:
-[Rscript_PiePlots_SourceTracker2.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/Rscript_PiePlots_SourceTracker2.R)
+* [Rscript_PiePlots_SourceTracker2.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/Rscript_PiePlots_SourceTracker2.R)
 
 ### Align trimmed and merged reads to human reference genome
 Reads were aligned to the human genome (hg19) to assess endogenous human DNA content and filter human DNA from the Ancestors' metagenomes. Resulting filtered.fastq.gz files were used as input for other downstream analyses.
 Reference for current project was [hg19](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.13/).
 
 Requires:
-[MapDamage2](https://ginolhac.github.io/mapDamage/)
+* [MapDamage2](https://ginolhac.github.io/mapDamage/)
 
-[human-genome_pipeline.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/human-genome_pipeline.sh)
+Update the following and run.
+* [human-genome_pipeline.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Ancient-Authentication/human-genome_pipeline.sh)
 
 
 ## Functional Classification
@@ -177,7 +178,8 @@ sed -i 's/# Gene Family/KOname/g' $file.ko.named-split/*tsv
 ```
 Meat consumption analysis performed using a list of enzyme commision numbers outlined by Muegge et al. (2011). These numbers were used to identify KEGG orthologous numbers in the HUMANn output.
 
-Required file: [MeatConsumption_ECnums.txt](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Files/MeatConsumption_ECnums.txt)
+Required file: 
+* [MeatConsumption_ECnums.txt](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Files/MeatConsumption_ECnums.txt)
 
 ```bash
 ## First get a list of just KO names (with EC)
@@ -195,7 +197,7 @@ head -1 $file.ko.named_unstratified.tsv > $file.HerbCarn.tsv; grep -f $file.Herb
 ```
 
 Visualize comparison with the following script:
-[HerbCarnBoxplotScript.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Functional-Analysis/HerbCarnBoxplotScript.R)
+* [HerbCarnBoxplotScript.R](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Functional-Analysis/HerbCarnBoxplotScript.R)
 
 
 ## Eukaryotic Classification with Kraken2
@@ -203,23 +205,23 @@ Visualize comparison with the following script:
 ### Build custom database
 Database was constructed using GTDB bacteria and archaea, NCBI viruses, fungi, protozoa, plastids, and chloroplasts.
 Steps for constructing the custom library and building both the kraken and bracken databases are outlined in the following script:
-[custom_krakendb.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/custom_krakendb.sh)
+* [custom_krakendb.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/custom_krakendb.sh)
 
 Requires:
-[Kraken2](https://github.com/DerrickWood/kraken2)
-[Bracken](https://github.com/jenniferlu717/Bracken)
-[taxonkit](https://bioinf.shenwei.me/taxonkit/)
-[brename](https://github.com/shenwei356/brename)
-[rush](https://github.com/shenwei356/rush)
-[biopython](https://biopython.org/wiki/Download)
+* [Kraken2](https://github.com/DerrickWood/kraken2)
+* [Bracken](https://github.com/jenniferlu717/Bracken)
+* [taxonkit](https://bioinf.shenwei.me/taxonkit/)
+* [brename](https://github.com/shenwei356/brename)
+* [rush](https://github.com/shenwei356/rush)
+* [biopython](https://biopython.org/wiki/Download)
 
 Accompanying scripts:
-[get_gtdb_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_gtdb_in_kraken_format.py)
-[update_kraken_continue.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/update_kraken_continue.py)
-[get_my_accession2taxid.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_my_accession2taxid.py)
-[get_organelle_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_organelle_in_kraken_format.py)
-[fix_krakenid.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/fix_krakenid.py)
-[get_fasta_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_fasta_in_kraken_format.py)
+* [get_gtdb_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_gtdb_in_kraken_format.py)
+* [update_kraken_continue.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/update_kraken_continue.py)
+* [get_my_accession2taxid.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_my_accession2taxid.py)
+* [get_organelle_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_organelle_in_kraken_format.py)
+* [fix_krakenid.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/fix_krakenid.py)
+* [get_fasta_in_kraken_format.py](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/get_fasta_in_kraken_format.py)
 
 ### Run Kraken and Bracken
 Classify Ancestors' metagenomes using custom Kraken2 database and re-estiimate abundances using Bracken for the purposes of identifying reads attributed to eukaryotic sources, or dietary constituents. Running Kraken requires ~ 450GB of memory.
@@ -254,8 +256,8 @@ done
 Determine if DNA from eukaryotes were identified in metagenomic samples as possible direct evidence of dietary constituents. To assess validity of diety through this avenue of exploration, reads must be mapped to a reference and damage patterns must be assessed. 
 
 Requires:
-[KrakenTools](https://github.com/jenniferlu717/KrakenTools)
-[MapDamage2](https://ginolhac.github.io/mapDamage/)
+* [KrakenTools](https://github.com/jenniferlu717/KrakenTools)
+* [MapDamage2](https://ginolhac.github.io/mapDamage/)
 
 ```bash
 K2DB=/path/to/k2db_GTDB
@@ -294,7 +296,8 @@ cat top_20_euk.txt|while read name; do \
 done
 ```
 
-Align sample reads to new genome files using [kraken_euk_mapping.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/kraken_euk_mapping.sh).
+Align sample reads to new genome files using the following:
+* [kraken_euk_mapping.sh](https://github.com/sarah9602/Anson-St-Ancestors-Oral-Microbiome/blob/main/Kraken-Analysis/kraken_euk_mapping.sh).
 
 
 
