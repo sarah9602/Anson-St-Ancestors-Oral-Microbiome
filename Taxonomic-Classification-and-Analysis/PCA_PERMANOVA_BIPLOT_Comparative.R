@@ -45,14 +45,14 @@ write.table(transposed_numberofspecies, file="comparative_metaphalan_numberofspe
 ## Merge species counts info with FinalTable
 SpeciesCounts <- read.table("comparative_metaphalan_numberofspecies.tsv", header=TRUE, row.names = NULL)
 colnames(SpeciesCounts)[1] <- "Row.names"
-colnames(SpeciesCounts)[2] <- "SpeciesCount"
-FinalTable_Speces<-merge(FinalTable,as.data.frame(SpeciesCounts),by="Row.names")
+colnames(SpeciesCounts)[2] <- "SpeciesCounts"
+FinalTable_Species<-merge(FinalTable,as.data.frame(SpeciesCounts),by="Row.names")
 
 ## Format other Variables in FinalTable
-FinalTable$TimePeriod <- factor(FinalTable$TimePeriod)
-FinalTable$Population <- factor(FinalTable$Population)
-FinalTable$TimePeriodLocation <- factor(FinalTable$TimePeriodLocation)
-FinalTable$Location <- factor(FinalTable$Location)
+FinalTable_Species$TimePeriod <- factor(FinalTable_Species$TimePeriod)
+FinalTable_Species$Population <- factor(FinalTable_Species$Population)
+FinalTable_Species$TimePeriodLocation <- factor(FinalTable_Species$TimePeriodLocation)
+FinalTable_Species$Location <- factor(FinalTable_Species$Location)
 
 ## Create color and shape codes used for Plots
 timeperiod_code_colors <- c("AncientNorthAmerica"="lightblue",
@@ -85,7 +85,7 @@ timeperiod_code_shapes_different <- c("AncientNorthAmerica"=0,
                             "ModernEurope"=5)
 
 ## Make Comparative PCA Plots
-plot1<-ggplot(data=FinalTable, aes(X.PC1, X.PC2, color = TimePeriodLocation, shape = TimePeriodLocation, size = TimePeriodLocation))+
+plot1<-ggplot(data=FinalTable_Species, aes(X.PC1, X.PC2, color = TimePeriodLocation, shape = TimePeriodLocation, size = TimePeriodLocation))+
   geom_point()+
   theme_bw()+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
@@ -97,7 +97,7 @@ plot1<-ggplot(data=FinalTable, aes(X.PC1, X.PC2, color = TimePeriodLocation, sha
   theme(text = element_text(size = 14), legend.position = "none")
 ggsave("PCA_ComparativePlotSpecies_ALL.png", plot = plot1, width = 6, height = 6, dpi = 400)
 
-SpeciesNumberplot<-ggplot(data=FinalTable_Speces, aes(X.PC1, X.PC2, color = SpeciesCount, shape = TimePeriodLocation, size = TimePeriodLocation))+
+SpeciesNumberplot<-ggplot(data=FinalTable_Species, aes(X.PC1, X.PC2, color = SpeciesCounts, shape = TimePeriodLocation, size = TimePeriodLocation))+
   geom_point()+
   theme_bw()+
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
@@ -109,6 +109,8 @@ SpeciesNumberplot<-ggplot(data=FinalTable_Speces, aes(X.PC1, X.PC2, color = Spec
   labs(x = "PC1", y = "PC2")
 ggsave("PCAComparativePlotSpecies_ALL_SpeciesCount.png", plot = SpeciesNumberplot, width = 9, height = 6, dpi = 400)
 
+FinalTable_Species$SpeciesCounts <- factor(FinalTable_Species$SpeciesCounts)
+
 
 ##########################################
 ## PERMANOVA TESTING USING VEGAN ON THE ##
@@ -119,19 +121,21 @@ ggsave("PCAComparativePlotSpecies_ALL_SpeciesCount.png", plot = SpeciesNumberplo
 diss_matrix <- vegdist(pca.result$x, method = "euclidean", na.rm = F)
 
 ## Create Variables based on Metadata
-TimePeriod_variable <- FinalTable$TimePeriod
-TimePeriodLocation_variable <- FinalTable$TimePeriodLocation
-Location_variable <- FinalTable$Location
-Population_variable <- FinalTable$Population
+TimePeriod_variable <- FinalTable_Species$TimePeriod
+TimePeriodLocation_variable <- FinalTable_Species$TimePeriodLocation
+Location_variable <- FinalTable_Species$Location
+Population_variable <- FinalTable_Species$Population
+Species_variable <- FinalTable_Species$SpeciesCounts
 
 ## Run PERMANOVA Association Testing using Adonis2
-perm_result_TimePeriod <- adonis2(diss_matrix ~ TimePeriod, FinalTable, permutations = 999, by = "margin")
-perm_result_TimePeriodLocation <- adonis2(diss_matrix ~ TimePeriodLocation, FinalTable, permutations = 999, by = "margin")
-perm_result_Location <- adonis2(diss_matrix ~ Location, FinalTable, permutations = 999, by = "margin")
-perm_result_Population <- adonis2(diss_matrix ~ Population, FinalTable, permutations = 999, by = "margin")
+perm_result_TimePeriod <- adonis2(diss_matrix ~ TimePeriod, FinalTable_Species, permutations = 999, by = "margin")
+perm_result_TimePeriodLocation <- adonis2(diss_matrix ~ TimePeriodLocation, FinalTable_Species, permutations = 999, by = "margin")
+perm_result_Location <- adonis2(diss_matrix ~ Location, FinalTable_Species, permutations = 999, by = "margin")
+perm_result_Population <- adonis2(diss_matrix ~ Population, FinalTable_Species, permutations = 999, by = "margin")
+perm_result_Species <- adonis2(diss_matrix ~ SpeciesCounts, FinalTable_Species, permutations = 999, by = "margin")
 
 ## Filter and Write PERMANOVA results
-all_permanova_results <- bind_rows(perm_result_TimePeriod, perm_result_TimePeriodLocation, perm_result_Location, perm_result_Population) %>% rownames_to_column("ID")
+all_permanova_results <- bind_rows(perm_result_TimePeriod, perm_result_TimePeriodLocation, perm_result_Location, perm_result_Population, perm_result_Species) %>% rownames_to_column("ID")
 
 all_permanova_results_filtered <- all_permanova_results %>%
   as_tibble() %>%
